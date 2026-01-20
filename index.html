@@ -1,10 +1,236 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Naradhi</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Naradhi — Autonomous Vehicles & ADAS empowered by AI</title>
+
+  <meta name="description" content="Naradhi builds autonomous vehicle software stacks and ADAS systems empowered by AI." />
+  <meta name="theme-color" content="#0b0f1a" />
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>NARADHI</h1>
-  <p>Automotive AI & Autonomous Systems</p>
+  <!-- Animated background -->
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div class="bg-overlay" aria-hidden="true"></div>
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">N</div>
+      <div class="brand-text">
+        <div class="brand-name">NARADHI</div>
+        <div class="brand-tag">Autonomous Vehicles & ADAS • AI-powered</div>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="#solutions">Solutions</a>
+      <a href="#products">Products</a>
+      <a href="#research">Research</a>
+      <a href="#blog">Blog</a>
+      <a href="#about">About</a>
+      <a class="cta" href="#contact">Contact</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+  </header>
+
+  <!-- Hero -->
+  <main class="container">
+    <section class="hero" id="top">
+      <div class="hero-content">
+        <h1>
+          Building the <span class="accent">Autonomous Vehicle Stack</span>
+          and <span class="accent">ADAS Systems</span> empowered by AI.
+        </h1>
+        <p class="sub">
+          Naradhi develops perception, prediction, planning, and validation capabilities
+          designed for safety, performance, and real-world deployment.
+        </p>
+
+        <div class="hero-cards">
+          <div class="card">
+            <div class="kicker">Focus</div>
+            <div class="title">ADAS → L2/L3+</div>
+            <p>Driver assistance features, scalable toward autonomy with rigorous validation.</p>
+          </div>
+          <div class="card">
+            <div class="kicker">Core</div>
+            <div class="title">AI Perception</div>
+            <p>Camera/radar/lidar fusion, object detection, lane & sign understanding.</p>
+          </div>
+          <div class="card">
+            <div class="kicker">Engineering</div>
+            <div class="title">V&V Tooling</div>
+            <p>Scenario testing, simulation pipelines, metrics, and evidence generation.</p>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#solutions">Explore Solutions</a>
+          <a class="button" href="#research">See Research</a>
+        </div>
+
+        <p class="note">
+          Tip: the moving background is a lightweight simulation-style visualization (runs locally in your browser).
+        </p>
+      </div>
+    </section>
+
+    <!-- Sections -->
+    <section class="section" id="solutions">
+      <div class="section-head">
+        <h2>Solutions</h2>
+        <p>Modular components that map to production autonomous driving programs.</p>
+      </div>
+
+      <div class="grid">
+        <article class="panel">
+          <h3>Perception & Sensor Fusion</h3>
+          <ul>
+            <li>2D/3D detection, tracking, free-space, and traffic sign/light understanding</li>
+            <li>Multi-sensor fusion for robustness across weather & lighting</li>
+            <li>Latency-aware pipelines and runtime profiling</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <h3>Prediction & Behavior Modeling</h3>
+          <ul>
+            <li>Intent prediction and trajectory forecasting</li>
+            <li>Uncertainty modeling for safer downstream planning</li>
+            <li>Edge-case discovery & coverage</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <h3>Planning & Safety Architecture</h3>
+          <ul>
+            <li>Rule-based + learning-based planning integration</li>
+            <li>Safety envelopes, fallback behaviors, and constraint handling</li>
+            <li>Evidence-driven safety arguments (supports compliance workflows)</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <h3>Simulation, Validation & Tooling</h3>
+          <ul>
+            <li>Scenario generation, replay pipelines, and regression tests</li>
+            <li>Metrics dashboards and failure clustering</li>
+            <li>Reproducible experiment tracking and report automation</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-head">
+        <h2>Products</h2>
+        <p>Early-stage offerings. Public visibility stays free; advanced tools can be gated later.</p>
+      </div>
+
+      <div class="grid">
+        <article class="panel">
+          <h3>Naradhi Scenario Suite</h3>
+          <p>Scenario packs and evaluation harnesses for ADAS/autonomy validation.</p>
+          <div class="pill-row">
+            <span class="pill">Simulation</span><span class="pill">Metrics</span><span class="pill">Regression</span>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Perception Diagnostics Kit</h3>
+          <p>Debug overlays, confidence analysis, and dataset slice tools for perception models.</p>
+          <div class="pill-row">
+            <span class="pill">Perception</span><span class="pill">Explainability</span><span class="pill">Data QA</span>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>Evidence Builder</h3>
+          <p>Automated evidence generation: scenario → run → metrics → report.</p>
+          <div class="pill-row">
+            <span class="pill">V&V</span><span class="pill">Reports</span><span class="pill">Audit</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="section-head">
+        <h2>Research</h2>
+        <p>Notes, write-ups, and publications. (You can later gate downloads via a separate private repo.)</p>
+      </div>
+
+      <div class="list">
+        <div class="item">
+          <div class="item-title">Robust token confidence from vision-only signals (OCR / signs)</div>
+          <div class="item-meta">Work in progress • 2026</div>
+        </div>
+        <div class="item">
+          <div class="item-title">Traffic sign understanding: subtype mismatch detection & correction</div>
+          <div class="item-meta">Applied ML • 2025–2026</div>
+        </div>
+        <div class="item">
+          <div class="item-title">Simulation-driven validation strategy for ADAS perception</div>
+          <div class="item-meta">Concept note • Coming soon</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="blog">
+      <div class="section-head">
+        <h2>Blog</h2>
+        <p>Short engineering posts. (Start simple; later you can add markdown posts.)</p>
+      </div>
+
+      <div class="list">
+        <a class="item link" href="#" onclick="return false;">
+          <div class="item-title">Why evidence-driven validation matters in ADAS</div>
+          <div class="item-meta">Draft</div>
+        </a>
+        <a class="item link" href="#" onclick="return false;">
+          <div class="item-title">From datasets to deployment: practical pitfalls in perception</div>
+          <div class="item-meta">Draft</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-head">
+        <h2>About</h2>
+        <p>Naradhi is building practical, safety-minded autonomy systems with strong engineering rigor.</p>
+      </div>
+
+      <div class="panel">
+        <p>
+          Naradhi focuses on autonomous driving stacks and ADAS systems empowered by AI—spanning perception,
+          validation tooling, and deployable engineering practices. The goal is simple: build technology that works
+          in the real world, handles edge cases, and can be validated with evidence.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p>For partnerships, pilots, or early access to tools.</p>
+      </div>
+
+      <div class="panel">
+        <p><strong>Email:</strong> contact@naradhi.com</p>
+        <p class="muted">Later you can add a “Request Access” form here to track adoption without charging money.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Naradhi LLC</div>
+      <div class="muted">Built on GitHub Pages</div>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
 </body>
 </html>
